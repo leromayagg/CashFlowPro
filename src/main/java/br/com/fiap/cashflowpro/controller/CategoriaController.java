@@ -7,7 +7,6 @@ import static org.springframework.http.HttpStatus.OK;
 
 import java.util.List;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,12 +30,12 @@ public class CategoriaController {
         return repository.findAll();
     }
 
-     @PostMapping
-     @ResponseStatus(CREATED)
-     public Categoria create(@RequestBody Categoria categoria){
+    @PostMapping
+    @ResponseStatus(CREATED)
+    public Categoria create(@RequestBody Categoria categoria){
          //binding
-         log.info("cadastrando categoria: {}", categoria);
-         return repository.save(categoria);
+        log.info("cadastrando categoria: {}", categoria);
+        return repository.save(categoria);
     }
 
     @GetMapping("{id}")
